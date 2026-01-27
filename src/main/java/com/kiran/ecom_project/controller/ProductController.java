@@ -32,18 +32,16 @@ public class ProductController {
 	private ProductService service;
 	
 	
-//	@GetMapping("/products")
-//	public List<Product> getAllProducts()
-//	{
-//		return service.getAllProducts();
-//	}
+	@GetMapping("/product")
+	public List<Product> getAllProduct()
+	{
+		return service.getAllProducts();
+	}
 	
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> getAllProducts()
 	{
 		System.out.println("Hi");
-        System.out.println("Hi");
-
 		return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
 	}
 	
