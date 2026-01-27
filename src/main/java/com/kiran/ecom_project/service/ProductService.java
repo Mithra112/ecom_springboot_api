@@ -12,44 +12,44 @@ import com.kiran.ecom_project.repo.ProductRepo;
 
 @Service
 public class ProductService {
-	
-	@Autowired
-	private ProductRepo repo;
 
-	public List<Product> getAllProducts() {
-		return repo.findAll();
-	}
+    @Autowired
+    private ProductRepo repo;
 
-	public Product getProductById(int id) {
-		
-		return repo.findById(id).orElse(null);
-	}
+    public List<Product> getAllProducts() {
+        return repo.findAll();
+    }
 
-	public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
-		
-		product.setImageName(imageFile.getOriginalFilename());
-		product.setImageType(imageFile.getContentType());
-		product.setImageDate(imageFile.getBytes());
-		return repo.save(product);
-		
-	}
+    public Product getProductById(int id) {
 
-	public Product updateProduct(int id, Product product, MultipartFile imageFile) throws IOException {
-		product.setImageDate(imageFile.getBytes());
-		product.setImageName(imageFile.getOriginalFilename());
-		product.setImageType(imageFile.getContentType());
-		return repo.save(product);
-	}
+        return repo.findById(id).orElse(null);
+    }
 
-	public void deleteProduct(int id) {
-		
-		repo.deleteById(id);
-		
-		
-	}
+    public Product addProduct(Product product, MultipartFile imageFile) throws IOException {
 
-	public List<Product> searchProducts(String keyword) {
-		return repo.searchProducts(keyword);
-	}
+        product.setImageName(imageFile.getOriginalFilename());
+        product.setImageType(imageFile.getContentType());
+        product.setImageDate(imageFile.getBytes());
+        return repo.save(product);
+
+    }
+
+    public Product updateProduct(int id, Product product, MultipartFile imageFile) throws IOException {
+        product.setImageDate(imageFile.getBytes());
+        product.setImageName(imageFile.getOriginalFilename());
+        product.setImageType(imageFile.getContentType());
+        return repo.save(product);
+    }
+
+    public void deleteProduct(int id) {
+
+        repo.deleteById(id);
+
+
+    }
+
+    public List<Product> searchProducts(String keyword) {
+        return repo.searchProducts(keyword);
+    }
 
 }
