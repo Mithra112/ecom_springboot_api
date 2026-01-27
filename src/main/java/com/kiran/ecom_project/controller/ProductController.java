@@ -43,6 +43,7 @@ public class ProductController {
 	{
 		System.out.println("Hi");
         System.out.println("Hi");
+
 		return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
 	}
 	
