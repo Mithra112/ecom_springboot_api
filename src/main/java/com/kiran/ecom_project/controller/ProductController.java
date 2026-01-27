@@ -34,7 +34,7 @@ public class ProductController {
 
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
-        System.out.println("Hi");
+        System.out.println("Hello ");
         return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
     }
 
