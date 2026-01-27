@@ -42,6 +42,7 @@ public class ProductController {
 	public ResponseEntity<List<Product>> getAllProducts()
 	{
 		System.out.println("Hi");
+        System.out.println("Hi");
 		return new ResponseEntity<>(service.getAllProducts(), HttpStatus.OK);
 	}
 	
