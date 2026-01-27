@@ -30,14 +30,7 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService service;
-	
-	
-	@GetMapping("/product")
-	public List<Product> getAllProduct()
-	{
-		return service.getAllProducts();
-	}
-	
+
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> getAllProducts()
 	{
